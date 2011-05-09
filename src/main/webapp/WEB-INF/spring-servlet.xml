@@ -7,12 +7,9 @@
                            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-2.5.xsd">
-	<context:component-scan base-package="com.mazak.controllers" >
-		<context:include-filter type="regex" expression=".*Controller" />
-	</context:component-scan>
+	<context:component-scan base-package="com.github.mazak.controllers" />
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver"
-		p:viewClass="org.springframework.web.servlet.view.RedirectView"
-        p:prefix="/wicket/bookmarkable/"
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+        p:prefix="/WEB-INF/views/"
 		p:suffix="" />	
 </beans>

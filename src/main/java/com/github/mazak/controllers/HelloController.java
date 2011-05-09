@@ -18,7 +18,7 @@ class HelloController {
     ModelAndView wicket() {
         Map attrs = new HashMap();
         attrs.put("abc", "babye");
-        ModelAndView mav = new ModelAndView("com.github.mazak.SpringPage");
+        ModelAndView mav = new ModelAndView("wicket.jsp");
 		mav.addObject("attrs", attrs);
         return mav;
     }
