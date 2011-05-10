@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
+
+import com.github.mazak.util.WicketInternalResourceView;
 
 @Controller
 class HelloController {
@@ -16,11 +18,7 @@ class HelloController {
         return attrs;
     }
     @RequestMapping(value="/SpringPage")
-    ModelAndView SpringPage() {
-        Map attrs = new HashMap();
-        attrs.put("abc", "babye");
-        ModelAndView mav = new ModelAndView("com.github.mazak.SpringPage");
-		mav.addObject("attrs", attrs);
-        return mav;
+    View SpringPage() {
+        return new WicketInternalResourceView("/wicket/bookmarkable/com.github.mazak.SpringPage");
     }
 }

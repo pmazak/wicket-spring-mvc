@@ -10,11 +10,10 @@
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
 	<bean id="viewResolver" class="com.github.mazak.util.WicketUrlBasedViewResolver"
-		p:order="0" p:viewClass="org.springframework.web.servlet.view.InternalResourceView"
+		p:order="1" p:viewClass="com.github.mazak.util.WicketInternalResourceView"
 		p:prefix="/wicket/bookmarkable/" p:suffix="" />
 	<bean id="jstlViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		p:order="1" p:viewClass="org.springframework.web.servlet.view.JstlView"
-		p:prefix="/WEB-INF/views/" p:suffix=".jsp">
-	</bean>
+		p:order="2" p:viewClass="org.springframework.web.servlet.view.JstlView"
+		p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
 </beans>

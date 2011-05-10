@@ -18,14 +18,14 @@
 	      or "deployment". If no configuration is found, "development" is the default.
 	-->
 	
-	<filter>
-		<filter-name>wicket.wicketExample</filter-name>
- 		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
-		<init-param>
-			<param-name>applicationClassName</param-name>
-			<param-value>com.github.mazak.WicketApplication</param-value>
- 		</init-param>
- 	</filter>
+<!-- 	<filter> -->
+<!-- 		<filter-name>wicket.wicketExample</filter-name> -->
+<!--  		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class> -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>applicationClassName</param-name> -->
+<!-- 			<param-value>com.github.mazak.WicketApplication</param-value> -->
+<!--  		</init-param> -->
+<!--  	</filter> -->
     <servlet>
         <servlet-name>wicket.wicketExampleServlet</servlet-name>
         <servlet-class>org.apache.wicket.protocol.http.WicketServlet</servlet-class>
@@ -35,12 +35,12 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <filter-mapping>
-        <filter-name>wicket.wicketExample</filter-name>
-	    <url-pattern>/*</url-pattern>
-	    <dispatcher>INCLUDE</dispatcher>
-	    <dispatcher>REQUEST</dispatcher>
-    </filter-mapping>    
+<!--     <filter-mapping> -->
+<!--         <filter-name>wicket.wicketExample</filter-name> -->
+<!-- 	    <url-pattern>/*</url-pattern> -->
+<!-- 	    <dispatcher>INCLUDE</dispatcher> -->
+<!-- 	    <dispatcher>REQUEST</dispatcher> -->
+<!--     </filter-mapping>     -->
     <servlet>
         <servlet-name>spring</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
