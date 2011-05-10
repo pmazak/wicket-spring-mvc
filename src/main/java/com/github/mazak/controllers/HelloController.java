@@ -12,13 +12,13 @@ class HelloController {
     @RequestMapping(value="/help")
     Map help() {
         Map attrs = new HashMap();
-        attrs.put("abc", "hereyea");
+        attrs.put("abc", "Help");
         return attrs;
     }
     @RequestMapping(value="/SpringPage")
     ModelAndView SpringPage() {
         Map attrs = new HashMap();
-        attrs.put("abc", "goaway");
+        attrs.put("abc", "I came from spring controller!");
         ModelAndView mav = new ModelAndView("com.github.mazak.SpringPage", attrs);
         return mav;
     }

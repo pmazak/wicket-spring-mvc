@@ -16,8 +16,7 @@
 	      3) context specific <context-param>
 	      The value might be either "development" (reloading when templates change)
 	      or "deployment". If no configuration is found, "development" is the default.
-	-->
-	
+	-->	
 	<filter>
 		<filter-name>wicket.wicketExample</filter-name>
  		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
@@ -26,15 +25,6 @@
 			<param-value>com.github.mazak.WicketApplication</param-value>
  		</init-param>
  	</filter>
-<!--     <servlet> -->
-<!--         <servlet-name>wicket.wicketExampleServlet</servlet-name> -->
-<!--         <servlet-class>org.apache.wicket.protocol.http.WicketServlet</servlet-class> -->
-<!--         <init-param> -->
-<!--           <param-name>applicationClassName</param-name> -->
-<!--           <param-value>com.github.mazak.WicketApplication</param-value> -->
-<!--         </init-param> -->
-<!--         <load-on-startup>2</load-on-startup> -->
-<!--     </servlet> -->
     <filter-mapping>
         <filter-name>wicket.wicketExample</filter-name>
 	    <url-pattern>/*</url-pattern>
@@ -46,10 +36,6 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-<!--     <servlet-mapping> -->
-<!--         <servlet-name>wicket.wicketExampleServlet</servlet-name> -->
-<!--         <url-pattern>/*</url-pattern> -->
-<!--     </servlet-mapping> -->
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
         <url-pattern>/spring/*</url-pattern>
