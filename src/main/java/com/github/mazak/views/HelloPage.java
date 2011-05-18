@@ -1,4 +1,4 @@
-package com.github.mazak;
+package com.github.mazak.views;
 
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -6,13 +6,14 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.protocol.http.servlet.ServletWebRequest;
 
-public class SpringPage extends WebPage {
+public class HelloPage extends WebPage {
 
-	public SpringPage() {
+	protected Map getModel() {
 		HttpServletRequest request = ((ServletWebRequest) getRequest()).getHttpServletRequest();
         //HttpSession session = ((ServletWebRequest) getRequest()).getHttpServletRequest().getSession();
         Map model = new HashMap();
@@ -21,6 +22,10 @@ public class SpringPage extends WebPage {
                 String attrName = e.nextElement();
                 model.put(attrName, request.getAttribute(attrName));
         }
-		add(new Label("message", String.valueOf(model.get("abc"))));
+        return model;
+	}	
+	public HelloPage(final PageParameters parameters) {
+		Map model = getModel();
+		add(new Label("message", (model.get("message") == null ? "" : String.valueOf(model.get("message")))));
 	}
 }

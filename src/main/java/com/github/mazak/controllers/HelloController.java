@@ -5,21 +5,13 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 class HelloController {
-    @RequestMapping(value="/help")
-    Map help() {
+    @RequestMapping( {"hello.do", "HelloPage.do"} )
+    Map hello() {
         Map attrs = new HashMap();
-        attrs.put("abc", "Help");
+        attrs.put("message", ", from Spring Controller.");
         return attrs;
-    }
-    @RequestMapping(value="/SpringPage")
-    ModelAndView SpringPage() {
-        Map attrs = new HashMap();
-        attrs.put("abc", "I came from spring controller!");
-        ModelAndView mav = new ModelAndView("com.github.mazak.SpringPage", attrs);
-        return mav;
     }
 }

@@ -9,11 +9,16 @@
 	<context:component-scan base-package="com.github.mazak.controllers" />
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
-	<bean id="viewResolver" class="com.github.mazak.util.WicketUrlBasedViewResolver"
+	<bean id="viewResolver" class="com.github.mazak.util.CapitalizedUrlBasedViewResolver"
 		p:order="1" p:viewClass="org.springframework.web.servlet.view.InternalResourceView"
-		p:prefix="/wicket/bookmarkable/" />
+		p:prefix="/?wicket:bookmarkablePage=:com.github.mazak.views." />
 	<bean id="jstlViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:order="2" p:viewClass="org.springframework.web.servlet.view.JstlView"
 		p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="defaultHandler">
+			<bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+		</property>
+	</bean>
 </beans>

@@ -1,4 +1,4 @@
-package com.github.mazak;
+package com.github.mazak.views;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;

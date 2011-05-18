@@ -1,6 +1,7 @@
-package com.github.mazak;
+package com.github.mazak.views;
 
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.settings.IResourceSettings;
 import org.apache.wicket.util.time.Duration;
 
 /**
@@ -13,6 +14,8 @@ public class WicketApplication extends WebApplication {
 
 	@Override
 	protected void init() {
+        IResourceSettings resourceSettings = getResourceSettings();
+        resourceSettings.addResourceFolder("WEB-INF/views/");
 		String configurationType = getConfigurationType();
 		if (DEVELOPMENT.equalsIgnoreCase(configurationType)) {
 			getResourceSettings().setResourcePollFrequency(Duration.ONE_SECOND);
@@ -31,5 +34,4 @@ public class WicketApplication extends WebApplication {
 	public Class<HomePage> getHomePage() {
 		return HomePage.class;
 	}
-
 }

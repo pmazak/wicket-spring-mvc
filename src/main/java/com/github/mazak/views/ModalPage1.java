@@ -1,4 +1,4 @@
-package com.github.mazak;
+package com.github.mazak.views;
 
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
 import org.apache.wicket.markup.html.WebPage;

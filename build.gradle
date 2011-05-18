@@ -1,6 +1,12 @@
+/*
+"CMD /D set GRADLE_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=4000'".execute()
+apply plugin: 'maven'
+task writeNewPom << {
+    pom {}.writeTo("$buildDir/newpom.xml")
+}
+*/
 apply plugin: 'jetty'
 apply plugin: 'eclipse'
-"CMD /D set GRADLE_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=4000'".execute()
 repositories {
     mavenCentral()
 }
