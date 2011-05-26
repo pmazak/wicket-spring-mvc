@@ -26,7 +26,7 @@
 		<testResources>
 			<testResource>
 				<filtering>false</filtering>
-				<directory>src/test/java</directory>
+				<directory>src/main/webapp/WEB-INF/views</directory>
 				<includes>
 					<include>**</include>
 				</includes>
@@ -67,12 +67,6 @@
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
           <version>3.0.5.RELEASE</version>
-          <scope>compile</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.wicket</groupId>
-          <artifactId>wicket-extensions</artifactId>
-          <version>${wicket.version}</version>
           <scope>compile</scope>
         </dependency>
         <dependency>
